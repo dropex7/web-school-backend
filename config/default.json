@@ -1,5 +1,5 @@
 {
   "port": 5000,
-  "connectionString": "postgresql://GUEST:postgres@localhost:5432/webschool",
+  "connectionString": "postgres://postgres:amilamil1999@localhost:5432/webschool",
   "baseUrl": "http://localhost:5000"
 }

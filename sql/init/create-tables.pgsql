@@ -11,7 +11,7 @@ CREATE TABLE public.courses
 );
 
 ALTER TABLE public.courses
-    OWNER to "GUEST";
+    OWNER to "postgres";
 
 CREATE TABLE public.lessons
 (
@@ -25,7 +25,7 @@ CREATE TABLE public.lessons
 );
 
 ALTER TABLE public.lessons
-    OWNER to "GUEST";
+    OWNER to "postgres";
 
 CREATE TABLE public.tasks
 (
@@ -40,7 +40,7 @@ CREATE TABLE public.tasks
 );
 
 ALTER TABLE public.tasks
-    OWNER to "GUEST";
+    OWNER to "postgres";
 
 CREATE TABLE public.users
 (
@@ -52,5 +52,5 @@ CREATE TABLE public.users
 );
 
 ALTER TABLE public.users
-    OWNER to "GUEST";
+    OWNER to "postgres";
 
