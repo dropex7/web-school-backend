@@ -25,12 +25,7 @@ VALUES
 INSERT INTO public.tasks (lessonID, question, right_answer, wrong_answer_1, wrong_answer_2, wrong_answer_3)
 VALUES
   (1, 'When VueJS was first released?', '2013', '2010', '2008', '2015'),
-  (1, 'Alias for v-bind', ':', '*', '@', '$'),
-  (1, 'How to bind value to component and listen to its chnages?', 'v-model', 'v-reactive', 'v-on', 'v-auto'),
   (2, 'Key principles of OOP', 'Inheritance, Incapsulation, Polymorphism', 'Agregation, Composition, Objectiveness', 'Composition, Incapsulation, Agregation', 'Inheritance, Polymorphism, Objectiveness'),
-  (2, 'REST API Jaba framework', 'Spring', 'Bootstrap', 'Django', 'Nest'),
   (3, 'Correct type definition in TypeScript', 'const a: string', 'string: const a', 'string a: const', 'a: const string'),
-  (3, 'Which operand is extension for &&', '??', '@@', '!!', '>>'),
-  (5, 'Keyword to inherit from an interface', 'extends', 'implements', 'super', 'constructs'),
-  (5, 'Cases you can export interface', 'Always', 'When its not extended from another interface', 'When its extended from another interface', 'Never'),
-  (4, 'Keyword for link to actual environment', 'self', 'this', 'that', 'actenv');
+  (4, 'Keyword for link to actual environment', 'self', 'this', 'that', 'actenv'),
+  (5, 'Cases you can export interface', 'Always', 'When its not extended from another interface', 'When its extended from another interface', 'Never');

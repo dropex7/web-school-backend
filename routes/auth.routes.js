@@ -10,7 +10,6 @@ router.post('/login', [
   check('password', 'Short password').isLength({ min: 4 })
 ], async (req, res) => {
   try {
-    console.log(123132);
     const errors = validationResult(req)
     if (!errors.isEmpty()) {
       return res.status(400).json({
@@ -20,11 +19,11 @@ router.post('/login', [
     }
     const users = await queries.getUsers()
     const { login, password } = req.body
-    const user = users.find(user => user.login === login)
+    const user = users.find(user => (user.login.trim() == login))
     if (!user) {
       return res.status(400).json({ message: 'Invalid login' })
     }
-    const isMatch = password === user.hashed_password;
+    const isMatch = (password == user.hashed_password.trim());
     if (!isMatch) {
       return res.status(400).json({ message: 'Wrong password'})
     }
