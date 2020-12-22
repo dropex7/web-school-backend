@@ -2,3 +2,5 @@
 package-lock.json
 node_modules/
 server-school.iml
+config/
+sql/init/create*
