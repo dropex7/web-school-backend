@@ -1,4 +1,3 @@
-const c = require("config");
 const { Router } = require("express");
 const queries = require("../sql/queries");
 

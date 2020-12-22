@@ -10,6 +10,7 @@ router.post('/login', [
   check('password', 'Short password').isLength({ min: 4 })
 ], async (req, res) => {
   try {
+    console.log(123132);
     const errors = validationResult(req)
     if (!errors.isEmpty()) {
       return res.status(400).json({
@@ -23,7 +24,7 @@ router.post('/login', [
     if (!user) {
       return res.status(400).json({ message: 'Invalid login' })
     }
-    const isMatch = await bcrypt.compare(password, user.hashed_password)
+    const isMatch = password === user.hashed_password;
     if (!isMatch) {
       return res.status(400).json({ message: 'Wrong password'})
     }
