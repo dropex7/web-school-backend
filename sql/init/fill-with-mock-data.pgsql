@@ -3,6 +3,7 @@ VALUES
   ('elonmusk@gmail.com', 'spaceoddity', 'student'),
   ('sam@gmail.com', 'serious', 'student'),
   ('iroh@gmail.com', 'greentea', 'teacher'),
+  ('a@a.a', '12345', 'admin'),
   ('nixel@gmail.com', 'pixel', 'student');
 
 INSERT INTO public.courses (name)
@@ -13,7 +14,7 @@ VALUES
   ('TypeScript'),
   ('VueJS');
 
-INSERT INTO public.lessons (courseID, lesson_name, video_name, preview_link, video_link)
+INSERT INTO public.lessons (course_id, lesson_name, video_name, preview_link, video_link)
 VALUES
   (5, 'Lesson 1: What is Vue?', 'VueJS 2 – 2020 course', 'https://i.ytimg.com/vi/OlnwgS-gk8Y/hq720.jpg?sqp=-oaymwEZCNAFEJQDSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLB0w1XSKIFGobHG5CxkbiITFXVFPg', 'https://www.youtube.com/embed/OlnwgS-gk8Y'),
   (3, 'Lesson 1: What is Java?', 'Java – 20s20 course', 'https://i.ytimg.com/vi/X81MWzN3j8Q/hq720.jpg?sqp=-oaymwEZCNAFEJQDSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLCrRxGdC8mWJwdOJ6Sk6YBn3SW3UQ', 'https://www.youtube.com/embed/X81MWzN3j8Q'),
@@ -22,7 +23,7 @@ VALUES
   (4, 'Lesson 2: Interfaces in TypeScript.', 'TypeScript Interfaces', 'https://i.ytimg.com/vi/7NU6K4170As/hq720.jpg?sqp=-oaymwEZCNAFEJQDSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLDByBvZ04qfdVgL6NOaJgQlKi0wPw', 'https://www.youtube.com/embed/7NU6K4170As'),
   (1, 'Lesson 1: What is C language?', 'C Programming Tutorial for Beginners', 'https://i.ytimg.com/vi/KJgsSFOSQv0/hq720.jpg?sqp=-oaymwEZCNAFEJQDSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLAgigijAsb6bq2hrilo8-wb5TPssQ','https://www.youtube.com/embed/KJgsSFOSQv0');
   
-INSERT INTO public.tasks (lessonID, question, right_answer, wrong_answer_1, wrong_answer_2, wrong_answer_3)
+INSERT INTO public.tasks (lesson_id, question, right_answer, wrong_answer_1, wrong_answer_2, wrong_answer_3)
 VALUES
   (1, 'When VueJS was first released?', '2013', '2010', '2008', '2015'),
   (2, 'Key principles of OOP', 'Inheritance, Incapsulation, Polymorphism', 'Agregation, Composition, Objectiveness', 'Composition, Incapsulation, Agregation', 'Inheritance, Polymorphism, Objectiveness'),

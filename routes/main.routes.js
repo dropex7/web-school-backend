@@ -1,11 +1,11 @@
-const { Router } = require("express");
-const queries = require("../sql/queries");
+const { Router } = require("express")
+const queries = require("../sql/queries")
 
-const router = Router();
+const router = Router()
 
 router.get("/courses", [], async (req, res) => {
   try {
-    const courses = await queries.getFullCourses();
+    const courses = await queries.getFullCourses()
     courses.map(course => {
       course.name = course.name.trim()
       course.lesson_name = course.lesson_name.trim()
@@ -13,13 +13,13 @@ router.get("/courses", [], async (req, res) => {
       course.preview_link = course.preview_link.trim()
       course.video_link = course.video_link.trim()
     })
-    return res.status(200).json({ courses });
+    return res.status(200).json({ courses })
   } catch (e) {
     return res
       .status(500)
-      .json({ message: "Error while getting courses.", errors: e.message });
+      .json({ message: "Error while getting courses.", errors: e.message })
   }
-});
+})
 
 router.get("/tasks/:lessonid", [], async (req, res) => {
   try {
@@ -32,12 +32,34 @@ router.get("/tasks/:lessonid", [], async (req, res) => {
       task.wrong_answer_2 = task.wrong_answer_2.trim()
       task.wrong_answer_3 = task.wrong_answer_3.trim()
     })
-    return res.status(200).json({ tasks });
+    return res.status(200).json({ tasks })
   } catch (e) {
     return res
       .status(500)
-      .json({ message: "Error while getting tasks.", errors: e.message });
+      .json({ message: "Error while getting tasks.", errors: e.message })
   }
-});
+})
 
-module.exports = router;
+router.get("/progress/:userid", [], async (req, res) => {
+  try {
+    const progress = await queries.getProgress(req.params.userid)
+    return res.status(200).json({ progress })
+  } catch (e) {
+    return res
+      .status(500)
+      .json({ message: `Get progress error: ${e.message}` })
+  }
+})
+
+router.post("/progress/:userid", [], async (req, res) => {
+  try {
+    const setRes = await queries.updateProgress(req.params.userid, req.newLesson)
+    return res.status.json({ message: 'Success' })
+  } catch (e) {
+    return res
+      .status(500)
+      .json({ message: `Post progress error: ${e.message}` })
+  }
+})
+
+module.exports = router
