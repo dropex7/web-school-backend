@@ -2,19 +2,18 @@ DROP TABLE IF EXISTS public.courses;
 DROP TABLE IF EXISTS public.lessons;
 DROP TABLE IF EXISTS public.tasks;
 DROP TABLE IF EXISTS public.users;
+DROP TABLE IF EXISTS public.progresses;
 
-CREATE TABLE public.courses
-(
+CREATE TABLE public.courses (
     courseID integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 ),
     name character(512) NOT NULL,
     PRIMARY KEY (courseID)
 );
 
 ALTER TABLE public.courses
-    OWNER to "postgres";
+    OWNER to "GUEST";
 
-CREATE TABLE public.lessons
-(
+CREATE TABLE public.lessons (
     lessonID integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 ),
     courseID integer NOT NULL,
     lesson_name character(512) NOT NULL,
@@ -27,8 +26,7 @@ CREATE TABLE public.lessons
 ALTER TABLE public.lessons
     OWNER to "postgres";
 
-CREATE TABLE public.tasks
-(
+CREATE TABLE public.tasks (
     taskID integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 ),
     lessonID integer NOT NULL,
     question character(1024) NOT NULL UNIQUE,
@@ -42,8 +40,7 @@ CREATE TABLE public.tasks
 ALTER TABLE public.tasks
     OWNER to "postgres";
 
-CREATE TABLE public.users
-(
+CREATE TABLE public.users (
     userID integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 ),
     login character(64) NOT NULL UNIQUE,
     hashed_password character(64) NOT NULL,
@@ -54,3 +51,10 @@ CREATE TABLE public.users
 ALTER TABLE public.users
     OWNER to "postgres";
 
+CREATE TABLE public.progresses (
+    userID integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 ),
+    progress integer NOT NULL
+);
+
+ALTER TABLE public.progresses
+    OWNER to "GUEST";
