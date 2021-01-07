@@ -22,7 +22,6 @@ VALUES
   (4, 'Lesson 1: What is TypeScript?', 'TypeScript – 2020 course', 'https://i.ytimg.com/vi/nyIpDs2DJ_c/hq720.jpg?sqp=-oaymwEZCNAFEJQDSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLDhehvePIrG5MLEnmt-yd3U-5g7IQ', 'https://www.youtube.com/embed/nyIpDs2DJ_c'),
   (2, 'Lesson 1: What is Python?', 'Python 3 – 2020 course', 'https://i.ytimg.com/vi/fp5-XQFr_nk/hq720.jpg?sqp=-oaymwEZCNAFEJQDSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLDBliUTuCu43NcBHL8X3uViTQMT0g', 'https://www.youtube.com/embed/fp5-XQFr_nk'),
   (4, 'Lesson 2: Interfaces in TypeScript.', 'TypeScript Interfaces', 'https://i.ytimg.com/vi/7NU6K4170As/hq720.jpg?sqp=-oaymwEZCNAFEJQDSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLDByBvZ04qfdVgL6NOaJgQlKi0wPw', 'https://www.youtube.com/embed/7NU6K4170As'),
-  (1, 'Lesson 1: What is C language?', 'C Programming Tutorial for Beginners', 'https://i.ytimg.com/vi/KJgsSFOSQv0/hq720.jpg?sqp=-oaymwEZCNAFEJQDSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLAgigijAsb6bq2hrilo8-wb5TPssQ','https://www.youtube.com/embed/KJgsSFOSQv0'),
   (6, 'Lesson 1: What is Webpack?', 'Webpack 4 – Full course 2020', 'https://i.ytimg.com/vi/eSaF8NXeNsA/hq720.jpg?sqp=-oaymwEZCNAFEJQDSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLAygK35k3iVKcyrkwgZNmS6_zXJUw', 'https://www.youtube.com/embed/eSaF8NXeNsA');
   
 INSERT INTO public.tasks (lesson_id, question, right_answer, wrong_answer_1, wrong_answer_2, wrong_answer_3)

@@ -37,7 +37,6 @@ const queries = {
   },
   updateProgress: async (userID, newLessonID) => {
     const pgs = await queries.getProgress(userID)
-    console.log('pgs', pgs);
     if (pgs.length) {
       const finished = pgs[0].finished_lessons
       if (!finished.includes(newLessonID)) {

@@ -53,7 +53,7 @@ router.get("/progress/:userid", [], async (req, res) => {
 
 router.post("/progress/:userid", [], async (req, res) => {
   try {
-    const setRes = await queries.updateProgress(req.params.userid, req.newLesson)
+    const setRes = await queries.updateProgress(req.params.userid, req.body.newLesson)
     return res.status.json({ message: 'Success' })
   } catch (e) {
     return res
